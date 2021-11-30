@@ -88,3 +88,9 @@ if __name__ == '__main__':
         acc_trn_list.append(accuracy_score(y[train_itr], trn_score))
         acc_tst_list.append(accuracy_score(y[test_itr], tst_score))
         k=k+1
+    
+    plt.plot(range(1, 5), acc_tst_list_optuna, label="Bayesian")
+    plt.ylabel('Test Accuracy')
+    plt.xlabel('num_folds')
+    plt.legend(loc='lower left')
+    plt.show()
